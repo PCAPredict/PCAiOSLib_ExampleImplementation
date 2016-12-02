@@ -1,0 +1,421 @@
+// !$*UTF8*$!
+{
+	archiveVersion = 1;
+	classes = {
+	};
+	objectVersion = 46;
+	objects = {
+
+/* Begin PBXBuildFile section */
+		690AF00B1DF20A2C008698BB /* FormViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 690AF00A1DF20A2C008698BB /* FormViewController.swift */; };
+		690AF00D1DF21618008698BB /* PCALookupView.xib in Resources */ = {isa = PBXBuildFile; fileRef = 690AF00C1DF21618008698BB /* PCALookupView.xib */; };
+		690AF0131DF21A19008698BB /* PCALookupViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 690AF0121DF21A19008698BB /* PCALookupViewController.swift */; };
+		691A4DF61DE4DADF00357B52 /* FindResponseItem.swift in Sources */ = {isa = PBXBuildFile; fileRef = 691A4DF51DE4DADF00357B52 /* FindResponseItem.swift */; };
+		691A4DF81DE4DCA500357B52 /* FindResponse.swift in Sources */ = {isa = PBXBuildFile; fileRef = 691A4DF71DE4DCA500357B52 /* FindResponse.swift */; };
+		691A4DFA1DE4DF7500357B52 /* RetrieveResponseItem.swift in Sources */ = {isa = PBXBuildFile; fileRef = 691A4DF91DE4DF7500357B52 /* RetrieveResponseItem.swift */; };
+		691A4DFC1DE4E45B00357B52 /* RetrieveResponse.swift in Sources */ = {isa = PBXBuildFile; fileRef = 691A4DFB1DE4E45B00357B52 /* RetrieveResponse.swift */; };
+		691A4E001DE4FCBF00357B52 /* RetrieveResponseDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 691A4DFF1DE4FCBF00357B52 /* RetrieveResponseDelegate.swift */; };
+		6950EB181DE4D4D1003984CA /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6950EB171DE4D4D1003984CA /* AppDelegate.swift */; };
+		6950EB1D1DE4D4D1003984CA /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 6950EB1B1DE4D4D1003984CA /* Main.storyboard */; };
+		6950EB1F1DE4D4D1003984CA /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 6950EB1E1DE4D4D1003984CA /* Assets.xcassets */; };
+		6950EB221DE4D4D1003984CA /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 6950EB201DE4D4D1003984CA /* LaunchScreen.storyboard */; };
+		E93FF35F11465EF47900860A /* Pods_CapturePlusControl_1.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = ED279EF438F9918E88966503 /* Pods_CapturePlusControl_1.framework */; };
+/* End PBXBuildFile section */
+
+/* Begin PBXFileReference section */
+		039377BFE96538CFD5889797 /* Pods-CapturePlusControl 1.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-CapturePlusControl 1.debug.xcconfig"; path = "Pods/Target Support Files/Pods-CapturePlusControl 1/Pods-CapturePlusControl 1.debug.xcconfig"; sourceTree = "<group>"; };
+		4F543B47A31915B92D655968 /* Pods-CapturePlusControl 1.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-CapturePlusControl 1.release.xcconfig"; path = "Pods/Target Support Files/Pods-CapturePlusControl 1/Pods-CapturePlusControl 1.release.xcconfig"; sourceTree = "<group>"; };
+		690AF00A1DF20A2C008698BB /* FormViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = FormViewController.swift; sourceTree = "<group>"; };
+		690AF00C1DF21618008698BB /* PCALookupView.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = PCALookupView.xib; sourceTree = "<group>"; };
+		690AF0121DF21A19008698BB /* PCALookupViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PCALookupViewController.swift; sourceTree = "<group>"; };
+		691A4DF51DE4DADF00357B52 /* FindResponseItem.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = FindResponseItem.swift; sourceTree = "<group>"; };
+		691A4DF71DE4DCA500357B52 /* FindResponse.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = FindResponse.swift; sourceTree = "<group>"; };
+		691A4DF91DE4DF7500357B52 /* RetrieveResponseItem.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = RetrieveResponseItem.swift; sourceTree = "<group>"; };
+		691A4DFB1DE4E45B00357B52 /* RetrieveResponse.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = RetrieveResponse.swift; sourceTree = "<group>"; };
+		691A4DFF1DE4FCBF00357B52 /* RetrieveResponseDelegate.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = RetrieveResponseDelegate.swift; sourceTree = "<group>"; };
+		6950EB141DE4D4D1003984CA /* CapturePlusControl 1.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "CapturePlusControl 1.app"; sourceTree = BUILT_PRODUCTS_DIR; };
+		6950EB171DE4D4D1003984CA /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
+		6950EB1C1DE4D4D1003984CA /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
+		6950EB1E1DE4D4D1003984CA /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
+		6950EB211DE4D4D1003984CA /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
+		6950EB231DE4D4D1003984CA /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		ED279EF438F9918E88966503 /* Pods_CapturePlusControl_1.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_CapturePlusControl_1.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+/* End PBXFileReference section */
+
+/* Begin PBXFrameworksBuildPhase section */
+		6950EB111DE4D4D1003984CA /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				E93FF35F11465EF47900860A /* Pods_CapturePlusControl_1.framework in Frameworks */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXFrameworksBuildPhase section */
+
+/* Begin PBXGroup section */
+		691A4DF41DE4DA9700357B52 /* Models */ = {
+			isa = PBXGroup;
+			children = (
+				691A4DF51DE4DADF00357B52 /* FindResponseItem.swift */,
+				691A4DF71DE4DCA500357B52 /* FindResponse.swift */,
+				691A4DF91DE4DF7500357B52 /* RetrieveResponseItem.swift */,
+				691A4DFB1DE4E45B00357B52 /* RetrieveResponse.swift */,
+				691A4DFF1DE4FCBF00357B52 /* RetrieveResponseDelegate.swift */,
+			);
+			name = Models;
+			sourceTree = "<group>";
+		};
+		6950EB0B1DE4D4D1003984CA = {
+			isa = PBXGroup;
+			children = (
+				6950EB161DE4D4D1003984CA /* CapturePlusControl 1 */,
+				6950EB151DE4D4D1003984CA /* Products */,
+				987629E0866FE9C15AB770E3 /* Pods */,
+				71AFE61259A58428C1220796 /* Frameworks */,
+			);
+			sourceTree = "<group>";
+		};
+		6950EB151DE4D4D1003984CA /* Products */ = {
+			isa = PBXGroup;
+			children = (
+				6950EB141DE4D4D1003984CA /* CapturePlusControl 1.app */,
+			);
+			name = Products;
+			sourceTree = "<group>";
+		};
+		6950EB161DE4D4D1003984CA /* CapturePlusControl 1 */ = {
+			isa = PBXGroup;
+			children = (
+				691A4DF41DE4DA9700357B52 /* Models */,
+				6950EB171DE4D4D1003984CA /* AppDelegate.swift */,
+				6950EB1B1DE4D4D1003984CA /* Main.storyboard */,
+				6950EB1E1DE4D4D1003984CA /* Assets.xcassets */,
+				6950EB201DE4D4D1003984CA /* LaunchScreen.storyboard */,
+				6950EB231DE4D4D1003984CA /* Info.plist */,
+				690AF00A1DF20A2C008698BB /* FormViewController.swift */,
+				690AF00C1DF21618008698BB /* PCALookupView.xib */,
+				690AF0121DF21A19008698BB /* PCALookupViewController.swift */,
+			);
+			path = "CapturePlusControl 1";
+			sourceTree = "<group>";
+		};
+		71AFE61259A58428C1220796 /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				ED279EF438F9918E88966503 /* Pods_CapturePlusControl_1.framework */,
+			);
+			name = Frameworks;
+			sourceTree = "<group>";
+		};
+		987629E0866FE9C15AB770E3 /* Pods */ = {
+			isa = PBXGroup;
+			children = (
+				039377BFE96538CFD5889797 /* Pods-CapturePlusControl 1.debug.xcconfig */,
+				4F543B47A31915B92D655968 /* Pods-CapturePlusControl 1.release.xcconfig */,
+			);
+			name = Pods;
+			sourceTree = "<group>";
+		};
+/* End PBXGroup section */
+
+/* Begin PBXNativeTarget section */
+		6950EB131DE4D4D1003984CA /* CapturePlusControl 1 */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 6950EB261DE4D4D1003984CA /* Build configuration list for PBXNativeTarget "CapturePlusControl 1" */;
+			buildPhases = (
+				D78EA29CBC396141C0D043DF /* [CP] Check Pods Manifest.lock */,
+				6950EB101DE4D4D1003984CA /* Sources */,
+				6950EB111DE4D4D1003984CA /* Frameworks */,
+				6950EB121DE4D4D1003984CA /* Resources */,
+				682A71FE3EAED123E50077D8 /* [CP] Embed Pods Frameworks */,
+				492088CE4AC4C603D745AE01 /* [CP] Copy Pods Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+			);
+			name = "CapturePlusControl 1";
+			productName = "CapturePlusControl 1";
+			productReference = 6950EB141DE4D4D1003984CA /* CapturePlusControl 1.app */;
+			productType = "com.apple.product-type.application";
+		};
+/* End PBXNativeTarget section */
+
+/* Begin PBXProject section */
+		6950EB0C1DE4D4D1003984CA /* Project object */ = {
+			isa = PBXProject;
+			attributes = {
+				LastSwiftUpdateCheck = 0810;
+				LastUpgradeCheck = 0810;
+				ORGANIZATIONNAME = "Henry Thomas";
+				TargetAttributes = {
+					6950EB131DE4D4D1003984CA = {
+						CreatedOnToolsVersion = 8.1;
+						DevelopmentTeam = BREHY9XD3U;
+						ProvisioningStyle = Automatic;
+					};
+				};
+			};
+			buildConfigurationList = 6950EB0F1DE4D4D1003984CA /* Build configuration list for PBXProject "CapturePlusControl 1" */;
+			compatibilityVersion = "Xcode 3.2";
+			developmentRegion = English;
+			hasScannedForEncodings = 0;
+			knownRegions = (
+				en,
+				Base,
+			);
+			mainGroup = 6950EB0B1DE4D4D1003984CA;
+			productRefGroup = 6950EB151DE4D4D1003984CA /* Products */;
+			projectDirPath = "";
+			projectRoot = "";
+			targets = (
+				6950EB131DE4D4D1003984CA /* CapturePlusControl 1 */,
+			);
+		};
+/* End PBXProject section */
+
+/* Begin PBXResourcesBuildPhase section */
+		6950EB121DE4D4D1003984CA /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				6950EB221DE4D4D1003984CA /* LaunchScreen.storyboard in Resources */,
+				6950EB1F1DE4D4D1003984CA /* Assets.xcassets in Resources */,
+				6950EB1D1DE4D4D1003984CA /* Main.storyboard in Resources */,
+				690AF00D1DF21618008698BB /* PCALookupView.xib in Resources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXResourcesBuildPhase section */
+
+/* Begin PBXShellScriptBuildPhase section */
+		492088CE4AC4C603D745AE01 /* [CP] Copy Pods Resources */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			name = "[CP] Copy Pods Resources";
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-CapturePlusControl 1/Pods-CapturePlusControl 1-resources.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+		682A71FE3EAED123E50077D8 /* [CP] Embed Pods Frameworks */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			name = "[CP] Embed Pods Frameworks";
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-CapturePlusControl 1/Pods-CapturePlusControl 1-frameworks.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+		D78EA29CBC396141C0D043DF /* [CP] Check Pods Manifest.lock */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			name = "[CP] Check Pods Manifest.lock";
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "diff \"${PODS_ROOT}/../Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n";
+			showEnvVarsInLog = 0;
+		};
+/* End PBXShellScriptBuildPhase section */
+
+/* Begin PBXSourcesBuildPhase section */
+		6950EB101DE4D4D1003984CA /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				690AF00B1DF20A2C008698BB /* FormViewController.swift in Sources */,
+				690AF0131DF21A19008698BB /* PCALookupViewController.swift in Sources */,
+				691A4DFC1DE4E45B00357B52 /* RetrieveResponse.swift in Sources */,
+				691A4E001DE4FCBF00357B52 /* RetrieveResponseDelegate.swift in Sources */,
+				691A4DF81DE4DCA500357B52 /* FindResponse.swift in Sources */,
+				6950EB181DE4D4D1003984CA /* AppDelegate.swift in Sources */,
+				691A4DF61DE4DADF00357B52 /* FindResponseItem.swift in Sources */,
+				691A4DFA1DE4DF7500357B52 /* RetrieveResponseItem.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXSourcesBuildPhase section */
+
+/* Begin PBXVariantGroup section */
+		6950EB1B1DE4D4D1003984CA /* Main.storyboard */ = {
+			isa = PBXVariantGroup;
+			children = (
+				6950EB1C1DE4D4D1003984CA /* Base */,
+			);
+			name = Main.storyboard;
+			sourceTree = "<group>";
+		};
+		6950EB201DE4D4D1003984CA /* LaunchScreen.storyboard */ = {
+			isa = PBXVariantGroup;
+			children = (
+				6950EB211DE4D4D1003984CA /* Base */,
+			);
+			name = LaunchScreen.storyboard;
+			sourceTree = "<group>";
+		};
+/* End PBXVariantGroup section */
+
+/* Begin XCBuildConfiguration section */
+		6950EB241DE4D4D1003984CA /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_ANALYZER_NONNULL = YES;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++0x";
+				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_DOCUMENTATION_COMMENTS = YES;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INFINITE_RECURSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_SUSPICIOUS_MOVES = YES;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
+				COPY_PHASE_STRIP = NO;
+				DEBUG_INFORMATION_FORMAT = dwarf;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				ENABLE_TESTABILITY = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu99;
+				GCC_DYNAMIC_NO_PIC = NO;
+				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_OPTIMIZATION_LEVEL = 0;
+				GCC_PREPROCESSOR_DEFINITIONS = (
+					"DEBUG=1",
+					"$(inherited)",
+				);
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 10.1;
+				MTL_ENABLE_DEBUG_INFO = YES;
+				ONLY_ACTIVE_ARCH = YES;
+				SDKROOT = iphoneos;
+				SWIFT_ACTIVE_COMPILATION_CONDITIONS = DEBUG;
+				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
+			};
+			name = Debug;
+		};
+		6950EB251DE4D4D1003984CA /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_ANALYZER_NONNULL = YES;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++0x";
+				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_DOCUMENTATION_COMMENTS = YES;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INFINITE_RECURSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_SUSPICIOUS_MOVES = YES;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
+				COPY_PHASE_STRIP = NO;
+				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
+				ENABLE_NS_ASSERTIONS = NO;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu99;
+				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 10.1;
+				MTL_ENABLE_DEBUG_INFO = NO;
+				SDKROOT = iphoneos;
+				SWIFT_OPTIMIZATION_LEVEL = "-Owholemodule";
+				VALIDATE_PRODUCT = YES;
+			};
+			name = Release;
+		};
+		6950EB271DE4D4D1003984CA /* Debug */ = {
+			isa = XCBuildConfiguration;
+			baseConfigurationReference = 039377BFE96538CFD5889797 /* Pods-CapturePlusControl 1.debug.xcconfig */;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				DEVELOPMENT_TEAM = BREHY9XD3U;
+				INFOPLIST_FILE = "CapturePlusControl 1/Info.plist";
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
+				PRODUCT_BUNDLE_IDENTIFIER = "HTD.CapturePlusControl-1";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_VERSION = 3.0;
+			};
+			name = Debug;
+		};
+		6950EB281DE4D4D1003984CA /* Release */ = {
+			isa = XCBuildConfiguration;
+			baseConfigurationReference = 4F543B47A31915B92D655968 /* Pods-CapturePlusControl 1.release.xcconfig */;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				DEVELOPMENT_TEAM = BREHY9XD3U;
+				INFOPLIST_FILE = "CapturePlusControl 1/Info.plist";
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
+				PRODUCT_BUNDLE_IDENTIFIER = "HTD.CapturePlusControl-1";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_VERSION = 3.0;
+			};
+			name = Release;
+		};
+/* End XCBuildConfiguration section */
+
+/* Begin XCConfigurationList section */
+		6950EB0F1DE4D4D1003984CA /* Build configuration list for PBXProject "CapturePlusControl 1" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				6950EB241DE4D4D1003984CA /* Debug */,
+				6950EB251DE4D4D1003984CA /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		6950EB261DE4D4D1003984CA /* Build configuration list for PBXNativeTarget "CapturePlusControl 1" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				6950EB271DE4D4D1003984CA /* Debug */,
+				6950EB281DE4D4D1003984CA /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+/* End XCConfigurationList section */
+	};
+	rootObject = 6950EB0C1DE4D4D1003984CA /* Project object */;
+}
