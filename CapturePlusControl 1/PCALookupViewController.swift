@@ -110,7 +110,14 @@ class PCALookupViewController: UIViewController, UITableViewDataSource, UITableV
     }
     
     func MakeRetrieveRequest(id: String){
-        let url = "https://" + host + "/capture/interactive/retrieve/v1.00/json3.ws?key=" + key + "&id=" + id.addingPercentEncoding(withAllowedCharacters: .urlHostAllowed)!;
+        var url = "https://" + host + "/capture/interactive/retrieve/v1.00/json3.ws?key=" + key + "&id=" + id.addingPercentEncoding(withAllowedCharacters: .urlHostAllowed)!;
+        
+        if let extraFormats = self.addressDelegate?.pca_extraFieldFormats?(){
+            for i in 0 ..< (extraFormats.count) {
+                let format = extraFormats[i];
+                url += "&Field" + String(i + 1) + "Format=" + format.addingPercentEncoding(withAllowedCharacters: .urlHostAllowed)!;
+            }
+        }
         
         print(url);
         Alamofire.request(url)

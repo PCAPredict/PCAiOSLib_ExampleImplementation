@@ -16,5 +16,5 @@ import UIKit
     @objc optional func pca_cellBackgroundColor(findResponse: FindResponseItem) -> UIColor
     @objc optional func pca_cellTextColor(findResponse: FindResponseItem) -> UIColor
     @objc optional func pca_backgroundColor() -> UIColor
-    
+    @objc optional func pca_extraFieldFormats() -> [String]
 }

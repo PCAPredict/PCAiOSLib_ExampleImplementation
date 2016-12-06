@@ -47,6 +47,13 @@ class FormViewController: UIViewController, PCALookupViewDelegate {
     func pca_backgroundColor() -> UIColor {
         return .blue;
     }*/
+    
+    func pca_extraFieldFormats() -> [String] {
+        var formats = [String]();
+        formats.append("{Longitude}");
+        formats.append("{Latitude}");
+        return formats;
+    }
  
     
     override func didReceiveMemoryWarning() {
