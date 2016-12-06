@@ -12,8 +12,15 @@ class FormViewController: UIViewController, PCALookupViewDelegate {
     
     
 
+    
+    
     override func viewDidLoad() {
         super.viewDidLoad()
+        let pcaView = PCALookupViewController(licenseKey: "LL00-UU00-KK00-EE00");
+        pcaView.addressDelegate = self;
+        if !pcaView.isValid(){
+            self.btnPCALookup.isHidden = true;
+        }
     }
     
     @IBOutlet weak var txtLine2: UITextField!
@@ -53,6 +60,11 @@ class FormViewController: UIViewController, PCALookupViewDelegate {
         formats.append("{Longitude}");
         formats.append("{Latitude}");
         return formats;
+    }
+    
+    @IBOutlet weak var btnPCALookup: UIButton!
+    func pca_didRecieveError(error: ResponseError) {
+        print("ERROR: " + error.Description! + " :: " + error.Cause!)
     }
  
     

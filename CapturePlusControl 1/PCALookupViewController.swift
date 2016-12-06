@@ -78,6 +78,11 @@ class PCALookupViewController: UIViewController, UITableViewDataSource, UITableV
     var lastText: String? = nil;
 
 
+    func isValid() -> Bool{
+        //TODO -- Check for errors - no credit, bad key, no network connection etc
+        return false;
+    }
+    
     
     var key: String = "";
     let host: String = "api.addressy.com";
@@ -100,7 +105,13 @@ class PCALookupViewController: UIViewController, UITableViewDataSource, UITableV
             .responseObject { (response: DataResponse<FindResponse>) in
                 
                 let fetchResponse = response.result.value;
-                print(fetchResponse?.Items?.first?.Text ?? "")
+                
+                if fetchResponse?.Items?.count == 1 && fetchResponse?.Items?.first?.Error != nil {
+                    //PCA Error
+                    self.addressDelegate?.pca_didRecieveError?(error: (fetchResponse?.Items?.first?.getError())!)
+                    return;
+                }
+                
                 if(fetchResponse != nil){
                     self.currentResponse = fetchResponse!;
                     self.outputTable.reloadData();
@@ -125,12 +136,13 @@ class PCALookupViewController: UIViewController, UITableViewDataSource, UITableV
                 
                 let retrieveResponse = response.result.value;
                 
-                let retrieveResponseItem = retrieveResponse?.Items?.first;
+                if retrieveResponse?.Items?.count == 1 && retrieveResponse?.Items?.first?.Error != nil {
+                    //PCA Error
+                    self.addressDelegate?.pca_didRecieveError?(error: (retrieveResponse?.Items?.first?.getError())!)
+                    return;
+                }
                 
-                /*let alertController = UIAlertController(title: "Address", message: retrieveResponseItem?.Label, preferredStyle: .alert)
-                 let action = UIAlertAction(title: "ok", style: .default);
-                 alertController.addAction(action)
-                 self.present(alertController, animated: true)*/
+                let retrieveResponseItem = retrieveResponse?.Items?.first;
                 
                 self.addressDelegate?.didRecieveAddress(address: retrieveResponseItem!);
                 

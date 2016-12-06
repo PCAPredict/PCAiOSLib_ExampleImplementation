@@ -114,6 +114,7 @@
                     </view>
                     <tabBarItem key="tabBarItem" title="Item 2" id="nDi-Fa-NM5"/>
                     <connections>
+                        <outlet property="btnPCALookup" destination="GFQ-VS-xeO" id="TAH-Le-zkD"/>
                         <outlet property="txtCounty" destination="Iyj-Je-JDK" id="MsP-L2-vuq"/>
                         <outlet property="txtLine1" destination="2B0-Bo-kg2" id="V97-Mt-Dye"/>
                         <outlet property="txtLine2" destination="xBQ-ra-Tf7" id="jPo-Sc-LEf"/>

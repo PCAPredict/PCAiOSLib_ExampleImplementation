@@ -69,7 +69,11 @@ class RetrieveResponseItem: NSObject, Mappable {
     Field17: String?,
     Field18: String?,
     Field19: String?,
-    Field20: String?;
+    Field20: String?,
+    Error: String?,
+    Cause: String?,
+    Resolution: String?,
+    Description: String?;
     
     required init(map: Map) {
         
@@ -193,5 +197,13 @@ class RetrieveResponseItem: NSObject, Mappable {
         Field18 <- map["Field18"];
         Field19 <- map["Field19"];
         Field20 <- map["Field20"];
+        Error <- map["Error"];
+        Cause <- map["Cause"];
+        Resolution <- map["Resolution"];
+        Description <- map["Description"];
+    }
+    
+    func getError() -> ResponseError{
+        return ResponseError(retrieveResponseItem: self);
     }
 }

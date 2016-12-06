@@ -17,7 +17,10 @@ class FindResponseItem: NSObject, Mappable {
     ItemType: String?,
     Text: String?,
     Highlight: String?,
-    Description: String?;
+    Description: String?,
+    Error: String?,
+    Cause: String?,
+    Resolution: String?;
     
     required init(map: Map) {
         
@@ -37,6 +40,13 @@ class FindResponseItem: NSObject, Mappable {
         Text <- map["Text"];
         Highlight <- map["Highlight"];
         Description <- map["Description"];
+        Error <- map["Error"];
+        Cause <- map["Cause"];
+        Resolution <- map["Resolution"];
+    }
+    
+    func getError() -> ResponseError{
+        return ResponseError(findResponseItem: self);
     }
     
 }
