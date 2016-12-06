@@ -11,7 +11,7 @@ import Alamofire
 import AlamofireObjectMapper
 import ObjectMapper
 
-class FindResponseItem: Mappable {
+class FindResponseItem: NSObject, Mappable {
     var
     Id: String?,
     ItemType: String?,
@@ -23,7 +23,7 @@ class FindResponseItem: Mappable {
         
     }
     
-    init(){
+    override init(){
         self.Id = "";
         self.ItemType = "";
         self.Text = "";

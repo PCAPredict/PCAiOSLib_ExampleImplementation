@@ -12,11 +12,12 @@ import CoreLocation
 
 class PCALookupViewController: UIViewController, UITableViewDataSource, UITableViewDelegate {
 
-    init() {
-        super.init(nibName: "PCALookupView", bundle: nil)
-      
-        
+    init(licenseKey: String) {
+        self.key = licenseKey;
+        super.init(nibName: "PCALookupView", bundle: nil)     
     }
+    
+  
     
     @IBAction func searchValueChanged(_ sender: Any) {
         var newText: String = searchField.text!;
@@ -51,6 +52,10 @@ class PCALookupViewController: UIViewController, UITableViewDataSource, UITableV
     override func viewDidLoad() {
         super.viewDidLoad()
        
+        if let bgColor = self.addressDelegate?.pca_backgroundColor?() {
+            self.view?.backgroundColor = bgColor;
+        }
+        
         let cont = UIApplication.shared.keyWindow?.rootViewController;
         self.topConstraint.constant += (cont?.topLayoutGuide.length)!;
         
@@ -64,7 +69,7 @@ class PCALookupViewController: UIViewController, UITableViewDataSource, UITableV
         searchField.becomeFirstResponder()
     }
     
-    var addressDelegate:RetrieveResponseDelegate?
+    var addressDelegate:PCALookupViewDelegate?
     
  
     
@@ -74,8 +79,7 @@ class PCALookupViewController: UIViewController, UITableViewDataSource, UITableV
 
 
     
-    let key: String = "LL00-UU00-KK00-EE00";
-    //let host: String = "services.postcodeanywhere.co.uk";
+    var key: String = "";
     let host: String = "api.addressy.com";
     
     func MakeFindRequest(){
@@ -140,12 +144,27 @@ class PCALookupViewController: UIViewController, UITableViewDataSource, UITableV
     }
     
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
-        let newCell = UITableViewCell(style: .subtitle, reuseIdentifier: "")
         
-        let currentItem = self.currentResponse?.Items?[indexPath.item];
-        newCell.textLabel!.text = currentItem?.Text;
-        newCell.detailTextLabel!.text = currentItem?.Description;
-        return newCell;
+        if let currentItem = self.currentResponse?.Items?[indexPath.item] {
+        
+            if let newCell = self.addressDelegate?.pca_cellForFindResponse?(findResponse: currentItem){
+                return newCell;
+            }else{
+                let newCell = UITableViewCell(style: .subtitle, reuseIdentifier: "")
+                newCell.textLabel!.text = currentItem.Text;
+                newCell.detailTextLabel!.text = currentItem.Description;
+                if let backgroundColor = self.addressDelegate?.pca_cellBackgroundColor?(findResponse: currentItem) {
+                    newCell.backgroundColor = backgroundColor;
+                }
+                if let textColor = self.addressDelegate?.pca_cellTextColor?(findResponse: currentItem){
+                    newCell.textLabel?.textColor = textColor;
+                    newCell.detailTextLabel?.textColor = textColor;
+                }
+            
+                return newCell;
+            }
+        }
+        return UITableViewCell(style: .subtitle, reuseIdentifier: "");
     }
     
     func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {

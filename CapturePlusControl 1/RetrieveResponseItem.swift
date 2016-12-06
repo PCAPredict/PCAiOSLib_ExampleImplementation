@@ -11,7 +11,7 @@ import Alamofire
 import AlamofireObjectMapper
 import ObjectMapper
 
-class RetrieveResponseItem: Mappable {
+class RetrieveResponseItem: NSObject, Mappable {
     var
     Id: String?,
     DomesticId: String?,
@@ -75,7 +75,7 @@ class RetrieveResponseItem: Mappable {
         
     }
     
-    init(){
+    override init(){
         self.Id = "";
         self.DomesticId = "";
         self.Language = "";

@@ -8,7 +8,7 @@
 
 import UIKit
 
-class FormViewController: UIViewController, RetrieveResponseDelegate {
+class FormViewController: UIViewController, PCALookupViewDelegate {
     
     
 
@@ -23,7 +23,7 @@ class FormViewController: UIViewController, RetrieveResponseDelegate {
     @IBOutlet weak var txtPostcode: UITextField!
     
     @IBAction func lookupAddressPressed(_ sender: Any) {
-        let viewController = PCALookupViewController();
+        let viewController = PCALookupViewController(licenseKey: "LL00-UU00-KK00-EE00");
         viewController.addressDelegate = self;
         self.present(viewController, animated: true, completion: nil)
     }
@@ -36,6 +36,19 @@ class FormViewController: UIViewController, RetrieveResponseDelegate {
         txtPostcode.text = address.PostalCode
     }
 
+    /*func pca_cellBackgroundColor(findResponse: FindResponseItem) -> UIColor {
+        return UIColor.blue;
+    }
+    
+    func pca_cellTextColor(findResponse: FindResponseItem) -> UIColor {
+        return UIColor.red;
+    }
+    
+    func pca_backgroundColor() -> UIColor {
+        return .blue;
+    }*/
+ 
+    
     override func didReceiveMemoryWarning() {
         super.didReceiveMemoryWarning()
     }

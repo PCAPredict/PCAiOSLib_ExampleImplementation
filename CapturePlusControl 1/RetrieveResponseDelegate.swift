@@ -7,7 +7,14 @@
 //
 
 import Foundation
+import UIKit
 
-protocol RetrieveResponseDelegate {
+
+@objc protocol PCALookupViewDelegate: class {
     func didRecieveAddress(address: RetrieveResponseItem)
+    @objc optional func pca_cellForFindResponse(findResponse: FindResponseItem) -> UITableViewCell
+    @objc optional func pca_cellBackgroundColor(findResponse: FindResponseItem) -> UIColor
+    @objc optional func pca_cellTextColor(findResponse: FindResponseItem) -> UIColor
+    @objc optional func pca_backgroundColor() -> UIColor
+    
 }
