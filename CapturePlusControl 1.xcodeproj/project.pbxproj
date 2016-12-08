@@ -19,6 +19,7 @@
 		6950EB1D1DE4D4D1003984CA /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 6950EB1B1DE4D4D1003984CA /* Main.storyboard */; };
 		6950EB1F1DE4D4D1003984CA /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 6950EB1E1DE4D4D1003984CA /* Assets.xcassets */; };
 		6950EB221DE4D4D1003984CA /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 6950EB201DE4D4D1003984CA /* LaunchScreen.storyboard */; };
+		69D352B01DF9FBCE005D1463 /* Reachability.swift in Sources */ = {isa = PBXBuildFile; fileRef = 69D352AF1DF9FBCE005D1463 /* Reachability.swift */; };
 		69DA7E5E1DF75F2B00FB08A6 /* ResponseError.swift in Sources */ = {isa = PBXBuildFile; fileRef = 69DA7E5D1DF75F2B00FB08A6 /* ResponseError.swift */; };
 		E93FF35F11465EF47900860A /* Pods_CapturePlusControl_1.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = ED279EF438F9918E88966503 /* Pods_CapturePlusControl_1.framework */; };
 /* End PBXBuildFile section */
@@ -40,6 +41,7 @@
 		6950EB1E1DE4D4D1003984CA /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		6950EB211DE4D4D1003984CA /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		6950EB231DE4D4D1003984CA /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		69D352AF1DF9FBCE005D1463 /* Reachability.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Reachability.swift; sourceTree = "<group>"; };
 		69DA7E5D1DF75F2B00FB08A6 /* ResponseError.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ResponseError.swift; sourceTree = "<group>"; };
 		ED279EF438F9918E88966503 /* Pods_CapturePlusControl_1.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_CapturePlusControl_1.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 /* End PBXFileReference section */
@@ -99,6 +101,7 @@
 				690AF00A1DF20A2C008698BB /* FormViewController.swift */,
 				690AF00C1DF21618008698BB /* PCALookupView.xib */,
 				690AF0121DF21A19008698BB /* PCALookupViewController.swift */,
+				69D352AF1DF9FBCE005D1463 /* Reachability.swift */,
 			);
 			path = "CapturePlusControl 1";
 			sourceTree = "<group>";
@@ -253,6 +256,7 @@
 				691A4DF81DE4DCA500357B52 /* FindResponse.swift in Sources */,
 				6950EB181DE4D4D1003984CA /* AppDelegate.swift in Sources */,
 				691A4DF61DE4DADF00357B52 /* FindResponseItem.swift in Sources */,
+				69D352B01DF9FBCE005D1463 /* Reachability.swift in Sources */,
 				691A4DFA1DE4DF7500357B52 /* RetrieveResponseItem.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

@@ -17,7 +17,13 @@ class PCALookupViewController: UIViewController, UITableViewDataSource, UITableV
         super.init(nibName: "PCALookupView", bundle: nil)     
     }
     
+    
+    var addressCache: [String: FindResponse] = [:];
   
+    
+    func flushFindCache(){
+        self.addressCache = [:];
+    }
     
     @IBAction func searchValueChanged(_ sender: Any) {
         var newText: String = searchField.text!;
@@ -29,7 +35,11 @@ class PCALookupViewController: UIViewController, UITableViewDataSource, UITableV
         lastText = newText;
         if(newText == ""){
             currentResponse = nil;
-            outputTable.reloadData();
+            //outputTable.reloadData();
+            let range = NSMakeRange(0, self.outputTable.numberOfSections)
+            let sections = NSIndexSet(indexesIn: range)
+            self.outputTable.reloadSections(sections as IndexSet, with: .automatic)
+            
         }else{
             MakeFindRequest();
         }
@@ -39,6 +49,21 @@ class PCALookupViewController: UIViewController, UITableViewDataSource, UITableV
     @IBOutlet weak var outputTable: UITableView!
     @IBOutlet weak var searchField: UITextField!
     
+    
+    func bolden(text: NSString)->NSAttributedString{
+        
+        
+        let attributedString = NSMutableAttributedString(string: text as String, attributes: [NSFontAttributeName:UIFont.systemFont(ofSize: 15.0)])
+        
+        let boldFontAttribute = [NSFontAttributeName: UIFont.boldSystemFont(ofSize: 15.0)]
+        
+        // Part of string to be bold
+        attributedString.addAttributes(boldFontAttribute, range: text.range(of: "10"))
+       
+        
+        // 4
+        return attributedString
+    }
     
     
     required init?(coder aDecoder: NSCoder) {
@@ -80,7 +105,12 @@ class PCALookupViewController: UIViewController, UITableViewDataSource, UITableV
 
     func isValid() -> Bool{
         //TODO -- Check for errors - no credit, bad key, no network connection etc
-        return false;
+   
+        if !Reachability.isInternetAvailable() {
+            return false;
+        }
+        
+        return true;
     }
     
     
@@ -100,7 +130,15 @@ class PCALookupViewController: UIViewController, UITableViewDataSource, UITableV
         if(lat != nil && long != nil){
             url += "&origin=\(lat!),\(long!)"
         }
+        
+        
+        if let cachedResponse = self.addressCache[url] {
+            self.currentResponse = cachedResponse;
+            self.outputTable.reloadData();
+        }else{
+            
         print(url);
+        
         manager?.request(url)
             .responseObject { (response: DataResponse<FindResponse>) in
                 
@@ -113,9 +151,16 @@ class PCALookupViewController: UIViewController, UITableViewDataSource, UITableV
                 }
                 
                 if(fetchResponse != nil){
+                    self.addressCache[url] = fetchResponse;
                     self.currentResponse = fetchResponse!;
-                    self.outputTable.reloadData();
+                    //self.outputTable.reloadData();
+                    let range = NSMakeRange(0, self.outputTable.numberOfSections)
+                    let sections = NSIndexSet(indexesIn: range)
+                    self.outputTable.reloadSections(sections as IndexSet, with: .automatic)
+                    
                 }
+        }
+            
         }
         
     }
@@ -170,7 +215,7 @@ class PCALookupViewController: UIViewController, UITableViewDataSource, UITableV
                 return newCell;
             }else{
                 let newCell = UITableViewCell(style: .subtitle, reuseIdentifier: "")
-                newCell.textLabel!.text = currentItem.Text;
+                newCell.textLabel!.attributedText = bolden(text: currentItem.Text! as NSString);//currentItem.Text;
                 newCell.detailTextLabel!.text = currentItem.Description;
                 if let backgroundColor = self.addressDelegate?.pca_cellBackgroundColor?(findResponse: currentItem) {
                     newCell.backgroundColor = backgroundColor;
