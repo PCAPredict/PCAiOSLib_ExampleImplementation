@@ -54,18 +54,33 @@ class PCALookupViewController: UIViewController, UITableViewDataSource, UITableV
     @IBOutlet weak var searchField: UITextField!
     
     
-    func bolden(text: NSString)->NSAttributedString{
+    func bolden(text: NSString, highlight: NSString)->NSAttributedString{
         
+        //Seperate the highlight string into an array of highlights
+        let highlightArr = highlight.components(separatedBy: ",");
         
+        //Create the new string and bold attribute to apply
         let attributedString = NSMutableAttributedString(string: text as String, attributes: [NSFontAttributeName:UIFont.systemFont(ofSize: 15.0)])
-        
         let boldFontAttribute = [NSFontAttributeName: UIFont.boldSystemFont(ofSize: 15.0)]
         
-        // Part of string to be bold
-        attributedString.addAttributes(boldFontAttribute, range: text.range(of: "10"))
-       
+        //Loop though the highlights
+        for h in highlightArr {
+            //Seperate the highlights into start and end numbers, converting them to int
+            let highlightNumbers = h.components(separatedBy: "-").flatMap { Int($0.trimmingCharacters(in: .whitespaces)) }
+            
+            //Location is where the highlight should start from
+            let location = highlightNumbers[0];
+            //Work out for how many charactors the highlight should be
+            let length = highlightNumbers[1] - highlightNumbers[0];
+            
+            //Build the range object
+            let range = NSRange(location: location, length: length);
+            
+            //Apply the bold attribute to the string, based on the range
+            attributedString.addAttributes(boldFontAttribute, range: range);
+        }
         
-        // 4
+        // Return the attributed string
         return attributedString
     }
     
@@ -142,8 +157,6 @@ class PCALookupViewController: UIViewController, UITableViewDataSource, UITableV
             self.currentResponse = cachedResponse;
             self.outputTable.reloadData();
         }else{
-            
-        print(url);
         
         manager?.request(url)
             .responseObject { (response: DataResponse<FindResponse>) in
@@ -221,7 +234,7 @@ class PCALookupViewController: UIViewController, UITableViewDataSource, UITableV
                 return newCell;
             }else{
                 let newCell = UITableViewCell(style: .subtitle, reuseIdentifier: "")
-                newCell.textLabel!.attributedText = bolden(text: currentItem.Text! as NSString);//currentItem.Text;
+                newCell.textLabel!.attributedText = bolden(text: currentItem.Text! as NSString, highlight: currentItem.Highlight! as NSString);//currentItem.Text;
                 newCell.detailTextLabel!.text = currentItem.Description;
                 if let backgroundColor = self.addressDelegate?.pca_cellBackgroundColor?(findResponse: currentItem) {
                     newCell.backgroundColor = backgroundColor;
