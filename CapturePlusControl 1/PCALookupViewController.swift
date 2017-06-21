@@ -25,6 +25,10 @@ class PCALookupViewController: UIViewController, UITableViewDataSource, UITableV
         self.addressCache = [:];
     }
     
+    @IBAction func cancelAddressSearch() {
+        dismiss(animated: true, completion: nil);
+    }
+    
     @IBAction func searchValueChanged(_ sender: Any) {
         var newText: String = searchField.text!;
         
@@ -81,8 +85,10 @@ class PCALookupViewController: UIViewController, UITableViewDataSource, UITableV
             self.view?.backgroundColor = bgColor;
         }
         
-        let cont = UIApplication.shared.keyWindow?.rootViewController;
-        self.topConstraint.constant += (cont?.topLayoutGuide.length)!;
+        if (self.topConstraint != nil) {
+            let cont = UIApplication.shared.keyWindow?.rootViewController;
+            self.topConstraint.constant += (cont?.topLayoutGuide.length)!;
+        }
         
         
         registerForKeyboardNotifications();
