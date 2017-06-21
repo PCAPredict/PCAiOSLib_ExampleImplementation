@@ -54,30 +54,42 @@ class PCALookupViewController: UIViewController, UITableViewDataSource, UITableV
     @IBOutlet weak var searchField: UITextField!
     
     
-    func bolden(text: NSString, highlight: NSString)->NSAttributedString{
-        
-        //Seperate the highlight string into an array of highlights
-        let highlightArr = highlight.components(separatedBy: ",");
-        
+    func bolden(text: NSString, highlight: NSString, isDescription: Bool)->NSAttributedString{
         //Create the new string and bold attribute to apply
         let attributedString = NSMutableAttributedString(string: text as String, attributes: [NSFontAttributeName:UIFont.systemFont(ofSize: 15.0)])
         let boldFontAttribute = [NSFontAttributeName: UIFont.boldSystemFont(ofSize: 15.0)]
         
-        //Loop though the highlights
-        for h in highlightArr {
-            //Seperate the highlights into start and end numbers, converting them to int
-            let highlightNumbers = h.components(separatedBy: "-").flatMap { Int($0.trimmingCharacters(in: .whitespaces)) }
+        //seperate the highlight array by semicolon first
+        let highlightSeperateArr = highlight.components(separatedBy: ";");
+        
+        if (highlightSeperateArr.count > 0 && isDescription == false || highlightSeperateArr.count > 1 && isDescription == true) {
             
-            //Location is where the highlight should start from
-            let location = highlightNumbers[0];
-            //Work out for how many charactors the highlight should be
-            let length = highlightNumbers[1] - highlightNumbers[0];
+            //Check if we should be using the description highlights
+            var i = 0;
+            if(isDescription) {
+                i = 1;
+            }
+            //Seperate the highlight string into an array of highlights
+            let highlightArr = highlightSeperateArr[i].components(separatedBy: ",");
             
-            //Build the range object
-            let range = NSRange(location: location, length: length);
-            
-            //Apply the bold attribute to the string, based on the range
-            attributedString.addAttributes(boldFontAttribute, range: range);
+            //Loop though the highlights
+            for h in highlightArr {
+                //Seperate the highlights into start and end numbers, converting them to int
+                let highlightNumbers = h.components(separatedBy: "-").flatMap { Int($0.trimmingCharacters(in: .whitespaces)) }
+                
+                if (highlightNumbers.count == 2) {
+                    //Location is where the highlight should start from
+                    let location = highlightNumbers[0];
+                    //Work out for how many characters the highlight should be
+                    let length = highlightNumbers[1] - highlightNumbers[0];
+                    
+                    //Build the range object
+                    let range = NSRange(location: location, length: length);
+                    
+                    //Apply the bold attribute to the string, based on the range
+                    attributedString.addAttributes(boldFontAttribute, range: range);
+                }
+            }
         }
         
         // Return the attributed string
@@ -234,8 +246,8 @@ class PCALookupViewController: UIViewController, UITableViewDataSource, UITableV
                 return newCell;
             }else{
                 let newCell = UITableViewCell(style: .subtitle, reuseIdentifier: "")
-                newCell.textLabel!.attributedText = bolden(text: currentItem.Text! as NSString, highlight: currentItem.Highlight! as NSString);//currentItem.Text;
-                newCell.detailTextLabel!.text = currentItem.Description;
+                newCell.textLabel!.attributedText = bolden(text: currentItem.Text! as NSString, highlight: currentItem.Highlight! as NSString, isDescription: false);
+                newCell.detailTextLabel!.attributedText = bolden(text: currentItem.Description! as NSString, highlight: currentItem.Highlight! as NSString, isDescription: true);
                 if let backgroundColor = self.addressDelegate?.pca_cellBackgroundColor?(findResponse: currentItem) {
                     newCell.backgroundColor = backgroundColor;
                 }
