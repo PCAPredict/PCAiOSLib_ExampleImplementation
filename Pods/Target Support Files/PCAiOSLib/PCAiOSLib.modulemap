@@ -1,0 +1,6 @@
+framework module PCAiOSLib {
+  umbrella header "PCAiOSLib-umbrella.h"
+
+  export *
+  module * { export * }
+}

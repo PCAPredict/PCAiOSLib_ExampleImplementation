@@ -7,6 +7,7 @@
 //
 
 import UIKit
+import PCAiOSLib
 
 @UIApplicationMain
 class AppDelegate: UIResponder, UIApplicationDelegate {

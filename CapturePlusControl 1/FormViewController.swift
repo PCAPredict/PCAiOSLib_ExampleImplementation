@@ -7,15 +7,13 @@
 //
 
 import UIKit
+import PCAiOSLib
 
 class FormViewController: UIViewController, PCALookupViewDelegate {
-    
-    
-
-    
-    
+        
     override func viewDidLoad() {
         super.viewDidLoad()
+        
         let pcaView = PCALookupViewController(licenseKey: "LL00-UU00-KK00-EE00");
         pcaView.addressDelegate = self;
         if !pcaView.isValid(){
@@ -34,6 +32,7 @@ class FormViewController: UIViewController, PCALookupViewDelegate {
         viewController.addressDelegate = self;
         self.present(viewController, animated: true, completion: nil)
     }
+    
     func didRecieveAddress(address: RetrieveResponseItem) {
         print(address)
         txtLine1.text = address.Line1
