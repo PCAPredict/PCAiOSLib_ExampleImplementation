@@ -8,6 +8,6 @@ target 'CapturePlusControl 1' do
   # Pods for CapturePlusControl 1
 pod 'Alamofire', '~> 4.2.0'
 pod 'AlamofireObjectMapper', '~> 4.0'
-pod 'PCAiOSLib', :path => '/Users/henrik/Projects/PCA-iOS-Lib'
+pod 'PCAiOSLib', '~> 1.0'
 
 end

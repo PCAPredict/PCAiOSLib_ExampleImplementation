@@ -30,7 +30,7 @@ class FormViewController: UIViewController, PCALookupViewDelegate {
     @IBAction func lookupAddressPressed(_ sender: Any) {
         let viewController = PCALookupViewController(licenseKey: "LL00-UU00-KK00-EE00");
         viewController.addressDelegate = self;
-        self.present(viewController, animated: true, completion: nil)
+        self.present(viewController, animated: true, completion: nil);
     }
     
     func didRecieveAddress(address: RetrieveResponseItem) {
