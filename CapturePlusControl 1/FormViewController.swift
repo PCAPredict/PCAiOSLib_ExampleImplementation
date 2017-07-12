@@ -1,11 +1,3 @@
-//
-//  FormViewController.swift
-//  CapturePlusControl 1
-//
-//  Created by Henry Thomas on 02/12/2016.
-//  Copyright © 2016 Henry Thomas. All rights reserved.
-//
-
 import UIKit
 import PCAiOSLib
 
@@ -14,7 +6,7 @@ class FormViewController: UIViewController, PCALookupViewDelegate {
     override func viewDidLoad() {
         super.viewDidLoad()
         
-        let pcaView = PCALookupViewController(licenseKey: "LL00-UU00-KK00-EE00");
+        let pcaView = PCALookupViewController(licenseKey: "0000-0000-0000-0000");
         pcaView.addressDelegate = self;
         if !pcaView.isValid(){
             self.btnPCALookup.isHidden = true;
@@ -28,7 +20,7 @@ class FormViewController: UIViewController, PCALookupViewDelegate {
     @IBOutlet weak var txtPostcode: UITextField!
     
     @IBAction func lookupAddressPressed(_ sender: Any) {
-        let viewController = PCALookupViewController(licenseKey: "LL00-UU00-KK00-EE00");
+        let viewController = PCALookupViewController(licenseKey: "0000-0000-0000-0000");
         viewController.addressDelegate = self;
         self.present(viewController, animated: true, completion: nil);
     }
@@ -53,6 +45,8 @@ class FormViewController: UIViewController, PCALookupViewDelegate {
     func pca_backgroundColor() -> UIColor {
         return .blue;
     }*/
+    
+    //Example of PCA extra fields
     
     func pca_extraFieldFormats() -> [String] {
         var formats = [String]();
