@@ -3,11 +3,11 @@
   "platforms": {
     "ios": "9.0"
   },
-  "summary": "Insert description",
+  "summary": "The PCAiOSLib Cocoapod is an easy way to use the PCA Predict or Addressy type-ahead search technology within an iOS application.",
   "requires_arc": true,
-  "version": "1.0.0",
+  "version": "1.1.1",
   "license": {
-    "type": "MIT",
+    "type": "BSD",
     "file": "LICENSE"
   },
   "authors": {
@@ -16,15 +16,15 @@
   "homepage": "https://www.pcapredict.com",
   "source": {
     "git": "https://github.com/PCAPredict/PCAiOSLib.git",
-    "tag": "1.0.0"
+    "tag": "1.1.1"
   },
   "frameworks": "UIKit",
   "dependencies": {
     "Alamofire": [
-      "~> 4.2.0"
+      "~> 4.8.1"
     ],
     "AlamofireObjectMapper": [
-      "~> 4.0"
+      "~> 5.2.0"
     ]
   },
   "source_files": "PCA-iOS-Lib/**/*.{swift}",

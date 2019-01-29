@@ -6,8 +6,8 @@ target 'CapturePlusControl 1' do
   use_frameworks!
 
   # Pods for CapturePlusControl 1
-pod 'Alamofire', '~> 4.2.0'
-pod 'AlamofireObjectMapper', '~> 4.0'
-pod 'PCAiOSLib', '~> 1.0'
+  pod 'Alamofire', '~> 4.8.1'
+  pod 'AlamofireObjectMapper', '~> 5.2.0'
+  pod 'PCAiOSLib', '~> 1.1.2'
 
 end
